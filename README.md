@@ -7,60 +7,61 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## How to Install Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Tutorial Install PHP dan Laravel di Windows
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Panduan ini akan membantu kamu menginstal PHP dan Laravel di Windows, serta menyiapkan proyek Laravel dan mengunggahnya ke GitHub.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 1. Menginstal PHP di Windows
 
-## Learning Laravel
+### 1.1. Download PHP
+1. Kunjungi [situs resmi PHP](https://windows.php.net/download) dan unduh versi terbaru dari PHP untuk Windows (Non Thread Safe versi zip).
+2. Ekstrak file zip ke direktori yang kamu pilih, misalnya `C:\php`.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 1.2. Konfigurasi PHP
+1. Buka folder `C:\php`.
+2. Salin file `php.ini-development` dan rename menjadi `php.ini`.
+3. Edit file `php.ini` menggunakan teks editor (misalnya Notepad).
+   - Cari baris `;extension_dir = "ext"` dan hapus `;` di depannya.
+   - Cari dan aktifkan ekstensi berikut dengan menghapus `;` di depannya:
+     ```
+     extension=curl
+     extension=mbstring
+     extension=openssl
+     extension=pdo_mysql
+     ```
+   - Simpan dan tutup file `php.ini`.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 1.3. Tambahkan PHP ke PATH
+1. Buka `Control Panel > System and Security > System > Advanced system settings`.
+2. Klik `Environment Variables`.
+3. Di bagian `System variables`, cari variabel `Path`, lalu klik `Edit`.
+4. Tambahkan path ke folder `C:\php`.
+5. Klik `OK` untuk menyimpan.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1.4. Verifikasi Instalasi PHP
+1. Buka Command Prompt (CMD).
+2. Ketik `php -v` dan tekan `Enter`.
+3. Kamu akan melihat versi PHP jika instalasi berhasil.
 
-## Laravel Sponsors
+## 2. Menginstal Composer
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 2.1. Download dan Install Composer
+1. Kunjungi [Composer](https://getcomposer.org/download/) dan unduh Composer-Setup.exe.
+2. Jalankan installer dan ikuti petunjuknya.
+3. Pastikan untuk memilih `C:\php\php.exe` saat diminta lokasi PHP.
 
-### Premium Partners
+### 2.2. Verifikasi Instalasi Composer
+1. Buka CMD.
+2. Ketik `composer` dan tekan `Enter`.
+3. Kamu akan melihat informasi Composer jika instalasi berhasil.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 3. Menginstal Laravel
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 3.1. Menggunakan Composer untuk Install Laravel
+1. Buka CMD.
+2. Arahkan ke folder di mana kamu ingin menyimpan proyek Laravel, misalnya `C:\xampp\htdocs`.
+3. Jalankan perintah berikut untuk menginstal Laravel:
+   ```bash
+   composer create-project --prefer-dist laravel/laravel nama-proyek
